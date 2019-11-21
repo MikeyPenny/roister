@@ -66,3 +66,28 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## To register and add users to a chat room 
+
+Create a user and register in Chatkit: https://pusher.com/docs/chatkit/reference/server-node#creating-a-user
+
+import Chatkit from '@pusher/chatkit-server';
+
+const chatkit = new Chatkit.default({
+  instanceLocator: YOUR_INSTANCE_LOCATOR,
+  key: YOUR_KEY,
+});
+
+chatkit.createUser({
+  id: 'userId',
+  name: 'Some Name',
+})
+.then(() => {
+console.log('User created successfully');
+}).catch((err) => {
+console.log(err);
+});
+
+We need to create a getUsers from db to choose and send this array to add the users list to chatKit and add them to a chat room
+

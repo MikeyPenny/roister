@@ -50,25 +50,27 @@ export default class Signup extends Component {
        })
    }
 
-   handleSubmit(e) {
-    var formData = new FormData(this.formRef.current);
+  handleSubmit(e) {
     e.preventDefault();
+    var formData = new FormData(this.formRef.current);
+    
     signup(formData)
       .then((response)=> {
+        // Register user on Chatkit
         this.props.history.push(`/Profile/${response.data.user._id}`);
       })
       .catch((error)=> {
         this.setState({errorMessage: error.response.data});
       })
- }
+  }
 
- handleInputUpload(e){
-  const data = new FormData();
-    data.append('file', e.target.files[0]);
-    data.append('name', 'some value user types');
-    data.append('description', 'some value user types');
-    this.setState({picture: data})
-}
+  handleInputUpload(e){
+    const data = new FormData();
+      data.append('file', e.target.files[0]);
+      data.append('name', 'some value user types');
+      data.append('description', 'some value user types');
+      this.setState({picture: data})
+  }
 
   render() {
       return (
