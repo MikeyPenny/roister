@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt")
 const User = require("../models/user");
 const uploadCloud = require('../config/cloudinary.js');
 const mongoose = require("mongoose");
+const Chatkit = require('@pusher/chatkit-server');
 
 router.post("/signup", uploadCloud.single('picture'), function (req,res) {
     User.findOne({$or: [{username: req.body.username, email: req.body.email}]})
@@ -20,13 +22,29 @@ router.post("/signup", uploadCloud.single('picture'), function (req,res) {
                             firstname: req.body.firstname,
                             lastname: req.body.lastname,
                             location: req.body.location,
-                            picture: req.file.url, 
+                            /* picture: req.file.url, 
                             skills: req.body.skills,
                             aboutme: req.body.aboutme, 
-                            jobposition: req.body.jobposition
+                            jobposition: req.body.jobposition */
                         })
                         .then((user)=> {
                             req.session.user = user
+                            const chatkit = new Chatkit.default({
+                                instanceLocator: `${process.env.INSTANCE_LOCATOR}`,
+                                key: `${process.env.SECRET_CK_KEY}`
+                            });
+                            // Create user in the chat server Mikey Sandoval
+                            chatkit.createUser({
+                                id: user.id,
+                                name: user.username
+                            })
+                            .then(() => {
+                                console.log('User created');
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            });
+
                             res.send({user})
                         })
                         .catch((err)=> {

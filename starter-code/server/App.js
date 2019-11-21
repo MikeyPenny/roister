@@ -11,7 +11,8 @@ const logger = require('morgan');
 const path = require('path');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-const cors = require('cors')
+const cors = require('cors');
+
 
 const app = express();
 app.use(express.static('uploads'));
@@ -19,7 +20,7 @@ app.use(express.static('uploads'));
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-mongoose.connect(`${process.env.Cluster_url}`, {useNewUrlParser: true})
+mongoose.connect(`${process.env.MONGODB_URL}`, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to MongoDB! Database name: "${x.connections[0].name}"`)
   })
