@@ -1,0 +1,34 @@
+
+.chat-app {
+    margin: 0;
+    padding: 0;
+}
+
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    padding: 5px;
+    margin-top: 20vh;
+    background: transparent;
+}
+
+.row-container {
+    display: flex;
+    width: 90%;
+    margin-bottom: 5px;
+}
+
+.cell-left {
+    width: 20%;
+}
+
+.cell-right {
+    width: 80%;
+}
+
+.page-header {
+    min-height: 70vh;
+}

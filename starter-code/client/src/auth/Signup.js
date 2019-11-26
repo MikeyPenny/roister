@@ -60,6 +60,7 @@ export default class Signup extends Component {
         this.props.history.push(`/Profile/${response.data.user._id}`);
       })
       .catch((error)=> {
+        debugger
         this.setState({errorMessage: error.response.data});
       })
   }

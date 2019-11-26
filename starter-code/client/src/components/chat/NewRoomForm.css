@@ -1,0 +1,18 @@
+
+form {
+    width: 100%;
+}
+
+.room-form-group {
+    width: 100%;
+}
+
+.room-input-name {
+    width: 80%;
+    font-size: 1rem;
+    border: none;
+}
+
+.create-room-btn {
+    font-size: 1rem;
+}

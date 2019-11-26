@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 
-require('dotenv').config()
+require('dotenv').config();
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root')); // Root for react app
 

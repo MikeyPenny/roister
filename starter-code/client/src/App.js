@@ -9,6 +9,7 @@ import Profile from "./components/Profile"
 import CreateProject from "./components/CreateProject"
 import Sendreset from "./auth/Send-reset"
 import NucleoIcons from "./views/index-sections/NucleoIcons"
+import RoisterMessenger from './components/chat/RoisterMessenger';
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/Send-reset" component={Sendreset} />
             <Route exact path="/CreateProject" component={CreateProject} />
             <Route exact path="/icons" component={NucleoIcons} />
+            <Route path="/chat" component={RoisterMessenger}></Route>
           </header>
       </div>
     );

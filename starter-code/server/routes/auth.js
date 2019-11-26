@@ -22,10 +22,10 @@ router.post("/signup", uploadCloud.single('picture'), function (req,res) {
                             firstname: req.body.firstname,
                             lastname: req.body.lastname,
                             location: req.body.location,
-                            /* picture: req.file.url, 
+                            picture: req.file.url, 
                             skills: req.body.skills,
                             aboutme: req.body.aboutme, 
-                            jobposition: req.body.jobposition */
+                            jobposition: req.body.jobposition
                         })
                         .then((user)=> {
                             req.session.user = user

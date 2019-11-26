@@ -81,6 +81,11 @@ function ExamplesNavbar(props) {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href={`/chat`} >
+                Messages
+              </NavLink>
+            </NavItem>
+            <NavItem>
                 <NavLink href="/Roister">
                   About Us
               </NavLink>

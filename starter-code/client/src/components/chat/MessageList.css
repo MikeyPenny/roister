@@ -1,0 +1,19 @@
+
+.message-list {
+    font-size: 1em;
+    overflow-y: scroll;
+    background-color: #fff;
+    color: #000;
+    height: 100%;
+    min-height: 28vh;
+    max-height: 30vh;
+    border-radius: 2px;
+}
+
+.join-room {
+    
+    background-color: #fff;
+    font-size: 1em;
+    color: #000;
+    
+}

@@ -14,16 +14,18 @@ import {
  import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 export default class Profile extends Component {
-    constructor(props){
-        super(props);
-    }
+    
+  constructor(props){
+    super(props);
+  }
 
-    state = {
-          user: "",
-          projects:[]
-        }
+  state = {
+    user: "",
+    projects:[]
+  }
 
   componentDidMount(){
+      
       instance({
         url: `${process.env.REACT_APP_Server_API}/Profile/${this.props.match.params.userId}`,
         method: "GET"
@@ -56,22 +58,22 @@ render(){
         <Container>
           <div className="button-container">
     
-            <div class="left">   
-            <button class="social-signin messages">Connect</button>
-            <button class="social-signin messages">Send a Message</button>
-            <button class="social-signin messages">View All Projects</button>
+            <div className="left">   
+            <button className="social-signin messages">Connect</button>
+            <button className="social-signin messages">Send a Message</button>
+            <button className="social-signin messages">View All Projects</button>
           </div>
 
-           <div class="right">   
+           <div className="right">   
            <a href='https://www.facebook.com/'>
-            <button class="social-signin facebook">Follow me on Facebook</button>
+            <button className="social-signin facebook">Follow me on Facebook</button>
            </a>
            
            <a href="https://www.twitter.com">
-            <button class="social-signin twitter">Follow me on Twitter</button>
+            <button className="social-signin twitter">Follow me on Twitter</button>
            </a>
            <a href="https://aboutme.google.com/">
-            <button class="social-signin google">Follow me on Google+</button>
+            <button className="social-signin google">Follow me on Google+</button>
             </a>
           </div>
           </div>        
