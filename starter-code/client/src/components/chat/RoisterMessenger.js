@@ -7,7 +7,15 @@ import SendMessageForm from './SendMessageForm';
 import NewRoomForm from './NewRoomForm';
 import './RoisterMessenger.css';
 import ExamplesNavbar from '../Navbars/ExamplesNavbar';
+import DefaultFooter from "components/Footers/DefaultFooter.js";
 
+import {
+    Nav,
+    TabPane,
+    Container,
+    Row,
+    Col,
+  } from "reactstrap";
 export default class RoisterMessenger extends Component {
 
     
@@ -102,7 +110,7 @@ export default class RoisterMessenger extends Component {
 
     render () {
         return (
-            <>
+            <div className="chat-container">
                 <ExamplesNavbar />
                 <div className="wrapper ">
                     <div className="page-header clear-filter page-header-small" filter-color="blue">
@@ -136,7 +144,41 @@ export default class RoisterMessenger extends Component {
                         </div>
                     </div>
                 </div>
-            </>
+                <div className="section">
+                    <Container>
+                        <div className="button-container">
+                    
+                            <div className="left">   
+                            <button className="social-signin messages">Connect</button>
+                            <button className="social-signin messages">Send a Message</button>
+                            <button className="social-signin messages">View All Projects</button>
+                        </div>
+
+                        <div className="right">   
+                        <a href='https://www.facebook.com/'>
+                            <button className="social-signin facebook">Follow me on Facebook</button>
+                        </a>
+                        
+                        <a href="https://www.twitter.com">
+                            <button className="social-signin twitter">Follow me on Twitter</button>
+                        </a>
+                        <a href="https://aboutme.google.com/">
+                            <button className="social-signin google">Follow me on Google+</button>
+                            </a>
+                        </div>
+                        </div>        
+                        <div className='profile-details-container'>
+                        
+                        </div>
+                        
+                        <br></br>
+                    </Container>
+                </div>
+                <div className="footer">
+                    <DefaultFooter/>
+                </div>
+                
+            </div>
             
         )
     }
